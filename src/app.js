@@ -1,5 +1,6 @@
 import os from 'os';
 import express from 'express';
+import getVat from './getVat';
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.get('/', async (req, res) => {
   res.json({
     status: true,
     hostname,
+    vat: getVat(1000),
   });
 });
 
