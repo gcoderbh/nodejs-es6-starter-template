@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "Node.js es6 starter template",
   "main": "src/index.js",
+  "author": {
+    "name": "gcoderbh",
+    "url": "https://github.com/gcoderbh/nodejs-es6-starter-template.git"
+  },
   "scripts": {
-    "build": "rimraf dist/ && babel ./src/ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "build": "rimraf dist/ && babel src --out-dir dist --copy-files",
     "start": "npm run build && node dist/index.js",
-    "test": "jest --watchAll --no-cache"
+    "test": "jest --watchAll --no-cache --coverage"
   },
   "keywords": [
     "nodejs",
@@ -16,8 +20,11 @@
     "babel",
     "jest"
   ],
-  "author": "gcoderbh",
   "license": "MIT",
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"]
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
